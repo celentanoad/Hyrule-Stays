@@ -4,16 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/stylesheets/main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">  
   <title>Hyrule Stays</title>
 </head>
 <body>
-  <h1>Hyrule Stays</h1>  
-  <ul>
-    <li>
-    <% if (user) { %>
-      <a href="/logout">Log Out</a>
-    <% } else { %>
-      <a href="/auth/google">Login with Google</a>
-    <% } %>
-    </li>
-  </ul>
+    <header>
+        <nav>
+            <ul class="left">
+                <img src="../../public/images/320px-ALBW_Triforce_Artwork.png" alt="Triforce">
+                <div>
+                    <% if (user) { %>
+                    <a href="/logout">Log Out</a>
+                    <% } else { %>
+                    <a href="/auth/google">Login with Google</a>
+                    <% } %>
+                </div>
+            </ul>
+            <ul class="right">
+                <div><a href="/stays">HOME</a></div>
+                <div><a href="">REGIONS</a></div>
+                <div><a href="">FAVORITES</a></div>
+            </ul>
+        </nav>
+    </header>

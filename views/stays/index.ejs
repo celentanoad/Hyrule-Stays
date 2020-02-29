@@ -1,5 +1,15 @@
 <%- include('../partials/header') %>
+<h1>HYRULE STAYS</h1>
+<p>A TRAVELER'S GUIDE</p>
 
+<p>Stayed somewhere that isn't on this list? Add it <a href="/stays/new">here</a> </p>
 
+<% stays.forEach(function(s) { %>
+  <div> <%= s.name%> </div>
+  <div><%= s.region %></div>
+  <div><%= s.avgRating %></div>
+  <a href="">Details</a>
+  <br><br>
+ <% }) %>
 
 <%- include('../partials/footer') %>
