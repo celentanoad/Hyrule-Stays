@@ -4,7 +4,8 @@ const User = require("../models/user");
 module.exports = {
   index,
   new: newPage,
-  create
+  create,
+  show
 };
 
 function index(req, res) {
@@ -16,6 +17,12 @@ function index(req, res) {
       name: req.query.name
     });
   });
+}
+
+function show(req, res) {
+  Stay.findById(req.params.id, function(err, stay) {
+    res.render("stays/show", {stay, user:req.user, name:req.query.name});
+  })
 }
 
 function newPage(req, res) {
