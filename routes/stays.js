@@ -6,5 +6,6 @@ router.get("/", staysCtrl.index);
 router.get("/new", staysCtrl.new);
 router.post("/", staysCtrl.create);
 router.get("/:id", staysCtrl.show);
+// router.delete("/", staysCtrl.delete);
 
 module.exports = router;

@@ -5,7 +5,8 @@ module.exports = {
   index,
   new: newPage,
   create,
-  show
+  show,
+  // delete: deleteOne
 };
 
 function index(req, res) {
@@ -19,10 +20,17 @@ function index(req, res) {
   });
 }
 
+// function deleteOne(req,res) {
+//   if (!req.user) return;
+//   Stay.findByIdAndDelete(req.params.id, function (err, stay) {
+//     res.redirect("/stays");
+//   });
+// }
+
 function show(req, res) {
   Stay.findById(req.params.id, function(err, stay) {
-    res.render("stays/show", {stay, user:req.user, name:req.query.name});
-  })
+    res.render("stays/show", {stay, user:req.user, name:req.query.name})
+  });
 }
 
 function newPage(req, res) {

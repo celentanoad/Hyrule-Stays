@@ -11,7 +11,7 @@ require('dotenv').config();
 const indexRouter = require("./routes/index");
 const staysRouter = require("./routes/stays");
 const usersRouter = require('./routes/users');
-const reviewsRouter = require("./routes/reviews")
+const reviewsRouter = require("./routes/reviews");
 
 require("./config/database");
 require("./config/passport");

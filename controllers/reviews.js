@@ -1,4 +1,3 @@
-const Review = require("../models/review");
 const Stay = require("../models/stay");
 
 module.exports = {
@@ -6,18 +5,15 @@ module.exports = {
 };
 
 
-
 function create(req, res) {
     Stay.findById(req.params.id, function(err, stay) {
+        if (!req.user) return res.redirect(`/stays/${req.params.id}`)
+        stay.reviews.userId = req.user.id;
         stay.reviews.push(req.body);
+        console.log(stay.reviews);
         stay.save(function(err) {
-            console.log(stay);
             res.redirect(`/stays/${req.params.id}`)
         });
     });
 }
-    //     req.body.stay = req.params.id;
-    //     Review.create(req.body, function(err, reviews) {
-    //         res.redirect(`/stays/${req.params.id}`)
-    //     });
-    // }
+

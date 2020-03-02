@@ -6,9 +6,11 @@
 
 <% stays.forEach(function(s) { %>
   <div> <%= s.name%> </div>
-  <div><%= s.region %></div>
+  <div>Region: <%= s.region %></div>
   <div><%= s.avgRating %></div>
   <a href="stays/<%=s._id%>">Details</a>
+  <div><button type="submit">Delete this entry</button></div>
+  
   <br><br>
  <% }) %>
 

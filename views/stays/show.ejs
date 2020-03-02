@@ -1,7 +1,8 @@
 <%- include('../partials/header') %>
 
 <h1><%= stay.name %></h1>
-<h2><%=stay.region %></h2>
+<h2><%= stay.region %></h2>
+
 <h2>Reviews</h2>
 <p>Stayed here before? Share your experience with fellow travelers!</p>
 
@@ -11,11 +12,11 @@
   <textarea name="content"></textarea>
   <label>Rating:</label>
   <select name="rating">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
     <option value="5">5</option>
+    <option value="4">4</option>
+    <option value="3">3</option>
+    <option value="2">2</option>
+    <option value="1">1</option>
   </select>
   <input type="submit" value="Add Review">
 </form>
@@ -35,14 +36,16 @@
         <% stay.reviews.forEach(function(r) { %>
           <tr>
             <td><%= r.createdAt.toLocaleDateString() %></td>
-            <td><%= r.userName%> </td>
+            <td><%= r.userId %> </td>
             <td><%= r.content %></td>
             <td><%= r.rating %></td>
+            <td><a href="">Edit</a></td>
+            <td><a href="">Delete</a></td>
             <% total += r.rating; %>
           </tr>
           <% }); %>
           <tr>
-            <td colspan="2"></td>
+            <td colspan="3"></td>
             <td><strong><%= (total / stay.reviews.length).toFixed(1) %></strong></td>
           </tr>
       </tbody>
