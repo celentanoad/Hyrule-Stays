@@ -2,8 +2,6 @@
 
 <h1><%= stay.name %></h1>
 <h2><%=stay.region %></h2>
-<h2><%=stay.avgRating %></h2>
-
 <h2>Reviews</h2>
 <p>Stayed here before? Share your experience with fellow travelers!</p>
 
@@ -33,14 +31,14 @@
         </tr>
       </thead>
       <tbody>
-        <% let total = 0 %>
+        <% total = 0 %>
         <% stay.reviews.forEach(function(r) { %>
-            <% total += r.rating %> 
           <tr>
-            <td><%= r.date.toLocaleDateString() %></td>
+            <td><%= r.createdAt.toLocaleDateString() %></td>
             <td><%= r.userName%> </td>
             <td><%= r.content %></td>
             <td><%= r.rating %></td>
+            <% total += r.rating; %>
           </tr>
           <% }); %>
           <tr>
