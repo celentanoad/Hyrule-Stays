@@ -11,6 +11,7 @@ require('dotenv').config();
 const indexRouter = require("./routes/index");
 const staysRouter = require("./routes/stays");
 const usersRouter = require('./routes/users');
+const reviewsRouter = require("./routes/reviews")
 
 require("./config/database");
 require("./config/passport");
@@ -29,7 +30,7 @@ app.use(session({
   secret: "I am error",
   resave: false,
   saveUninitialized: true
-}))
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, "public")));
@@ -37,6 +38,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/stays", staysRouter);
 app.use('/users', usersRouter);
+app.use("/", reviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

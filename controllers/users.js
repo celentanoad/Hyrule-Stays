@@ -5,5 +5,5 @@ module.exports = {
 }
 
 function index(req, res, next) {
-    res.render()
+    res.render();
 }

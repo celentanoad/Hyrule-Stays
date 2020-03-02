@@ -26,6 +26,7 @@ function show(req, res) {
 }
 
 function newPage(req, res) {
+  if (!req.user) return res.redirect("/stays");
   res.render("stays/new", {
     user: req.user, name: req.query.name
   });
