@@ -24,7 +24,10 @@
             <ul class="right">
                 <div><a href="/stays">HOME</a></div>
                 <div><a href="">REGIONS</a></div>
-                <div><a href="">FAVORITES</a></div>
+                <div> <% if (user) { %>
+                    <a href="/users/<%= user._id %>">ACCOUNT</a>
+                <% } %>
+                </div>
             </ul>
         </nav>
     </header>

@@ -3,10 +3,10 @@ const router = express.Router();
 const staysCtrl = require("../controllers/stays");
 
 router.get("/", staysCtrl.index);
-router.get("/new", staysCtrl.new);
-router.post("/", staysCtrl.create);
+router.get("/new", isLoggedIn, staysCtrl.new);
+router.post("/", isLoggedIn, staysCtrl.create);
 router.get("/:id", staysCtrl.show);
-router.delete("/", isLoggedIn, staysCtrl.delete);
+router.delete("/:id", isLoggedIn, staysCtrl.delete);
 
 module.exports = router;
 

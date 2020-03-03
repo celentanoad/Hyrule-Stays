@@ -33,14 +33,14 @@
       </thead>
       <tbody>
         <% total = 0 %>
-        <% stay.reviews.forEach(function(r, idx) { %>
+        <% stay.reviews.reverse().forEach(function(r, idx) { %>
           <tr>
             <td><%= r.createdAt.toLocaleDateString() %></td>
             <td><%= r.userName %> </td>
             <td><%= r.content %></td>
             <td><%= r.rating %></td>
             <td><a href="/stays/<%= idx%>">Edit/Delete</a></td>
-            <td><form action="/stays/<%= idx%>?_method=DELETE" method="POST">
+            <td><form action="/stays/<%= idx %>?_method=DELETE" method="POST">
                     <button type="submit" id="deletebtn">X</button>
                 </form>
             </td>

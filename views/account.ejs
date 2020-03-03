@@ -1,0 +1,14 @@
+<%- include('./partials/header') %>
+
+<h1>Hello <%= user.alias %> !</h1>
+
+<label> Change your alias here:
+    <form action="account" method="POST">
+        <input id="alias" type="text" name="alias">
+        <button type="submit">Submit</button>
+    </form>
+</label>
+
+<h2>Favorite Places</h2>
+
+<%- include('./partials/footer') %>

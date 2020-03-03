@@ -21,9 +21,17 @@ function index(req, res) {
 }
 
 function deleteOne(req,res) {
-  Stay.findByIdAndDelete(req.params.id, function (err, stay) {
-    res.redirect("/stays");
-  });
+  Stay.findById(req.params.id, function (err, stay) {
+    console.log(stay);
+    if (stay.userCreated.equals(req.user._id)) {
+    Stay.findByIdAndDelete(req.params.id, function(err, stay) {
+      res.redirect("/stays");
+      });
+    }
+    else {
+      res.redirect("/stays");
+    }
+  })
 }
 
 function show(req, res) {
@@ -33,7 +41,6 @@ function show(req, res) {
 }
 
 function newPage(req, res) {
-  if (!req.user) return res.redirect("/stays");
   res.render("stays/new", {
     user: req.user, name: req.query.name
   });
@@ -41,6 +48,7 @@ function newPage(req, res) {
 
 function create(req, res) {
   const stay = new Stay(req.body);
+  stay.userCreated = req.user._id;
   stay.save(function(err) {
     if (err) return res.redirect("/stays/new");
     res.redirect("/stays");
