@@ -9,7 +9,11 @@
   <div>Region: <%= s.region %></div>
   <div><%= s.avgRating %></div>
   <a href="stays/<%=s._id%>">Details</a>
-  <div><button type="submit">Delete this entry</button></div>
+  <div>
+    <form action="/stays/<%=s._id%>?_method=DELETE" method="POST">
+      <button type="submit" id="deletebtn">Delete this entry</button>
+    </form>
+  </div>
   
   <br><br>
  <% }) %>

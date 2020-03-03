@@ -7,10 +7,9 @@ module.exports = {
 
 function create(req, res) {
     Stay.findById(req.params.id, function(err, stay) {
-        if (!req.user) return res.redirect(`/stays/${req.params.id}`)
-        stay.reviews.userId = req.user.id;
+        req.body.userId = req.user._id;
+        req.body.userName = req.user.alias;
         stay.reviews.push(req.body);
-        console.log(stay.reviews);
         stay.save(function(err) {
             res.redirect(`/stays/${req.params.id}`)
         });
