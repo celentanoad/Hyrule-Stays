@@ -7,7 +7,8 @@
         <input type="text" name="name" value="<%=stay.name%>">
     </label><br>
     <label>Region: 
-        <select name="region" value="<%=stay.region %>">
+        <select name="region">
+            <option value="<%=stay.region %>"><%=stay.region %></option>
             <option value="Akkala">Akkala</option>
             <option value="Central Hyrule">Central Hyrule</option>
             <option value="Dueling Peaks">Dueling Peaks</option>
@@ -25,7 +26,7 @@
             <option value="Gerudo Wasteland">Gerudo Wasteland</option>
         </select>
     </label><br><br>
-    <input type="submit" value="Add">
+    <input type="submit" value="Update">
 </form>
 
 <%- include('../partials/footer') %>
