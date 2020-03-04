@@ -20,13 +20,35 @@ function create(req, res) {
 
 
 function deleteOne(req, res) {
+
     
-    Stay.findById(req.params.stay_id, function(err, stay) {
-        console.log(stay);
-        stay.reviews.splice(req.params.idx, 1);
-    })
-    
+
+    Stay.findOne({"reviews._id" : req.params.id}, function(err, stay) {
+        const selectedReview = stay.reviews.id(req.params.id);
+        const idx = stay.reviews.indexOf(selectedReview);
+        if (req.user._id.equals(selectedReview.userId)) {
+            stay.reviews.splice(idx, 1);
+            stay.save(function(err) {
+            res.redirect(`/stays/${stay._id}`)
+            });
+        } else {
+            res.redirect(`/stays/${stay._id}`)
+        }
+});
 }
+
+
+    //     if (stay.reviews.userId.equals(req.user._id)) {
+    //     });
+    //     };
+    // })
+
+
+    // Stay.findById(req.params.stay_id, function(err, stay) {
+    //     console.log(stay);
+    //     stay.reviews.splice(req.params.idx, 1);
+    // });
+// }
 //     console.log(req.params.id);
 //     if (review.userId.equals(req.user._id)) {
 //     Stay.findById(req.params.id, function(err, stay) {
