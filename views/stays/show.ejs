@@ -1,13 +1,13 @@
 <%- include('../partials/header') %>
 
-<h1><%= stay.name %></h1>
-<h2><%= stay.region %></h2>
+<h1 class="title"><%= stay.name %></h1>
+<h2 class="title">Region: <%= stay.region %></h2>
 
 <h2>Reviews</h2>
 <p>Stayed here before? Share your experience with fellow travelers!</p>
 
 <form id="add-review-form" method="POST"
-  action="/stays/<%= stay._id %>/reviews">
+action="/stays/<%= stay._id %>/reviews" <% if (!user) { %> hidden <% } %>>
   <label>Review:</label>
   <textarea name="content"></textarea>
   <label>Rating:</label>
@@ -39,9 +39,8 @@
             <td><%= r.userName %> </td>
             <td><%= r.content %></td>
             <td><%= r.rating %></td>
-            <td><a href="/stays/<%= idx %>">Edit Review</td>
             <td><form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                    <button type="submit" id="deletebtn">Delete this review</button>
+                    <button type="submit" id="deletebtn" <% if (!user) { %> hidden <% } else if (user._id.equals(r.userId) == false ) { %> hidden <% } %>>Delete this review</button>
                     <input name="stay_id" value= "<%=stay._id%>" hidden>
                 </form>
             </td>
