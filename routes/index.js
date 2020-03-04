@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require("passport");
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Hyrule Stays' });
+  res.redirect('/stays');
 });
 
 router.get("/auth/google", passport.authenticate("google", {
