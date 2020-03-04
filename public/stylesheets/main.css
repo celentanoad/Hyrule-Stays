@@ -3,10 +3,11 @@
   src: url("../HyliaSerifBeta-Regular.otf") format("opentype");
 }
 
-nav {
+.nav-wrapper {
   font-family: HyliaSerifBeta-Regular;
   color: goldenrod;
-  background-color: #2b4d26;
+  background: rgb(246,208,92);
+  background: linear-gradient(90deg, rgba(246,208,92,1) 0%, rgba(43,77,38,1) 100%);
   font-size: 20px;
 }
 
@@ -28,10 +29,20 @@ h3 {
   font-family: HyliaSerifBeta-Regular;
 }
 
+.card-panel {
+  background: #2b4d26;
+  border: goldenrod solid 3px;
+  
+}
+
 .details {
   font-family: "Old Standard TT";
   font-size: 20px;
+  color: goldenrod;
+  text-decoration: underline;
+  text-shadow: -.5px .5px 1.5px black;
 }
+
 
 #name {
   font-family: HyliaSerifBeta-Regular;
@@ -56,7 +67,27 @@ form {
 }
 
 img {
-  max-width: 100px;
+  max-width: 76px;
   height: auto;
 }
 
+th {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+td {
+  font-size: 15px;
+}
+
+#textbox {
+  font-size: 15px;
+  font-family: "Old Standard TT";
+  background-color: beige;
+  width: 400px;
+  height:100px;
+}
+
+.form-label {
+  font-size: 20px;
+}

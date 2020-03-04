@@ -2,22 +2,25 @@
 
 <h1 class="title"><%= stay.name %></h1>
 <h2 class="title">Region: <%= stay.region %></h2>
-
-<h2>Reviews</h2>
+<br><br>
+<h4>Reviews</h4>
 <p>Stayed here before? Share your experience with fellow travelers!</p>
 
-<form id="add-review-form" method="POST"
+<form method="POST"
 action="/stays/<%= stay._id %>/reviews" <% if (!user) { %> hidden <% } %>>
-  <label>Review:</label>
-  <textarea name="content"></textarea>
-  <label>Rating:</label>
-  <select name="rating">
+  <label class="form-label">Review: <br>
+  <textarea name="content" id="textbox"></textarea>
+  </label> <br>
+  <label class="form-label">Rating: <br>
+  <select name="rating" value="5">
     <option value="5">5</option>
     <option value="4">4</option>
     <option value="3">3</option>
     <option value="2">2</option>
     <option value="1">1</option>
-  </select>
+  </select> 
+  </label>
+  <br> <br>
   <input type="submit" value="Add Review">
 </form>
 

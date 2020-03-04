@@ -11,23 +11,23 @@
 <body>
     <header>
         <nav>
-            <ul class="left">
-                <img src="/images/320px-ALBW_Triforce_Artwork.png" alt="Triforce">
-                <div>
-                    <% if (user) { %>
-                    <a href="/logout">Log Out</a>
-                    <% } else { %>
-                    <a href="/auth/google">Login with Google</a>
-                    <% } %>
-                </div>
-            </ul>
-            <ul class="right">
-                <div><a href="/stays">HOME</a></div>
-                <div><a href="">REGIONS</a></div>
-                <div> <% if (user) { %>
-                    <a href="/users/<%= user._id %>">ACCOUNT</a>
-                <% } %>
-                </div>
-            </ul>
+            <div class="nav-wrapper">
+                <img src="/images/320px-ALBW_Triforce_Artwork.png" alt="Triforce" class="brand-logo left">
+                <ul id="nav-mobile" class="right">
+                    <li>
+                        <% if (user) { %>
+                        <a href="/logout">Log Out</a>
+                        <% } else { %>
+                        <a href="/auth/google">Login with Google</a>
+                        <% } %>
+                        </li>
+                    <li><a href="/stays">HOME</a></li>
+                    <li><a href="">REGIONS</a></li>
+                    <li> <% if (user) { %>
+                        <a href="/users/<%= user._id %>">ACCOUNT</a>
+                        <% } %>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
