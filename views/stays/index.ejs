@@ -10,13 +10,10 @@
   <div><%= s.avgRating %></div>
   <a href="stays/<%=s._id%>">Details</a>
   <div>
-    <% if (s.userCreated.equals(req.user._id)) { %>
     <form action="/stays/<%=s._id %>?_method=DELETE" method="POST">
       <button type="submit" id="deletebtn">Delete this entry</button>
     </form>
-  <% } %>
   </div>
-  
   <br><br>
  <% }) %>
 

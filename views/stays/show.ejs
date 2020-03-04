@@ -39,9 +39,10 @@
             <td><%= r.userName %> </td>
             <td><%= r.content %></td>
             <td><%= r.rating %></td>
-            <td><a href="/stays/<%= idx%>">Edit/Delete</a></td>
-            <td><form action="/stays/<%= idx %>?_method=DELETE" method="POST">
+            <td><a href="/stays/<%= idx %>">Edit/Delete</a></td>
+            <td><form action="/stays/<%stay._id %>/reviews<%= idx %>?_method=DELETE" method="POST">
                     <button type="submit" id="deletebtn">X</button>
+                    <input name="stay_id" value= "<%=stay._id%>">
                 </form>
             </td>
             <% total += r.rating; %>
