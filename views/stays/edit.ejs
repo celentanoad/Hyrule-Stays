@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<h1>Edit This Entry</h1>
+
+<form action="/stays/update/<%= stay._id %>" method="POST">
+    <label>Name: 
+        <input type="text" name="name" value="<%=stay.name%>">
+    </label><br>
+    <label>Region: 
+        <select name="region" value="<%=stay.region %>">
+            <option value="Akkala">Akkala</option>
+            <option value="Central Hyrule">Central Hyrule</option>
+            <option value="Dueling Peaks">Dueling Peaks</option>
+            <option value="Eldin">Eldin</option>
+            <option value="Faron">Faron</option>
+            <option value="Gerudo Highlands">Gerudo Highlands</option>
+            <option value="Great Plateau">Great Plateau</option>
+            <option value="Hateno">Hateno</option>
+            <option value="Hebra">Hebra</option>
+            <option value="Lake Hylia">Lake Hylia</option>
+            <option value="Lanayru">Lanayru</option>
+            <option value="Ridgeland">Ridgeland</option>
+            <option value="Tabantha">Tabantha</option>
+            <option value="Great Hyrule Forest">Great Hyrule Forest</option>
+            <option value="Gerudo Wasteland">Gerudo Wasteland</option>
+        </select>
+    </label><br><br>
+    <input type="submit" value="Add">
+</form>
+
+<%- include('../partials/footer') %>

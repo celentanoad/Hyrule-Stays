@@ -7,6 +7,8 @@ router.get("/new", isLoggedIn, staysCtrl.new);
 router.post("/", isLoggedIn, staysCtrl.create);
 router.get("/:id", staysCtrl.show);
 router.delete("/:id", isLoggedIn, staysCtrl.delete);
+router.get("/:id/edit", isLoggedIn, staysCtrl.showUpdate);
+router.put("/:id", isLoggedIn, staysCtrl.update);
 
 module.exports = router;
 

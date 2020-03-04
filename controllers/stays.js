@@ -6,7 +6,9 @@ module.exports = {
   new: newPage,
   create,
   show,
-  delete: deleteOne
+  delete: deleteOne,
+  showUpdate,
+  update
 };
 
 function index(req, res) {
@@ -18,6 +20,20 @@ function index(req, res) {
       name: req.query.name
     });
   });
+}
+
+function showUpdate(req, res) {
+  Stay.findById(req.params.id, function(err, stay) {
+    if (stay.userCreated.equals(req.user._id)) {
+      res.render("stays/edit", {stay, user:req.user, name: req.query.name});
+    } else {
+      res.redirect("/stays");
+    }
+  });
+}
+
+function update(req,res) {
+  
 }
 
 function deleteOne(req,res) {
