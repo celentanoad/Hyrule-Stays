@@ -6,6 +6,9 @@ Hyrule Stays is a campsite/stable review site based on the world of Hyrule from 
 Start your journey here: 
 https://hyrule-stays.herokuapp.com
 
+Trello planning board:
+https://trello.com/b/X0uUIF23/hyrule-stays
+
 ## Screenshots
 
 ![Home Page](https://i.imgur.com/oRbKIIO.png)
