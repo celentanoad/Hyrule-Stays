@@ -11,7 +11,6 @@
       <div class="card-panel">
           <span class="card-title" id="name"> <%= s.name%> </span>
             <div id="region">Region: <%= s.region %></div>
-            <div><%= s.avgRating %></div>
             <a href="stays/<%=s._id%>" class="details">Details</a>
             <div class="index-buttons">
               <form action="stays/<%=s._id%>/edit" method="GET">
