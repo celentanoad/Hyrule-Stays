@@ -5,7 +5,19 @@
 
 ## Screenshots
 
+![Home Page](https://i.imgur.com/oRbKIIO.png)
+
+![Account Page](https://i.imgur.com/vfJdqum.png)
+
+![Details Page](https://i.imgur.com/POao3kV.png)
+
 ## Technologies Used
+- Javascript
+- HTML
+- CSS
+- Node.js
+- Express
+- MongoDB
 
 ## User Experience
 

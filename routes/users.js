@@ -8,6 +8,7 @@ router.get('/', function(req, res, next) {
 
 router.get("/:id", isLoggedIn, usersCtrl.show);
 router.post("/:id", isLoggedIn, usersCtrl.createAlias);
+router.post("/:id", isLoggedIn, usersCtrl.updateFavorites);
 
 
 function isLoggedIn(req, res, next) {

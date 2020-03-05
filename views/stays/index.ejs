@@ -13,14 +13,12 @@
             <div id="region">Region: <%= s.region %></div>
             <div><%= s.avgRating %></div>
             <a href="stays/<%=s._id%>" class="details">Details</a>
-            <div>
+            <div class="index-buttons">
               <form action="stays/<%=s._id%>/edit" method="GET">
-                <button type="submit" <% if (!user) { %> hidden <% } else if (user._id.equals(s.userCreated) == false ) { %> hidden <% } %> >Edit this entry</button>
+                <button class="button" type="submit" <% if (!user) { %> hidden <% } else if (user._id.equals(s.userCreated) == false ) { %> hidden <% } %> >Edit this entry</button>
               </form>
-            </div>
-            <div>
               <form action="/stays/<%=s._id %>?_method=DELETE" method="POST">
-                <button type="submit" id="deletebtn" <% if (!user) { %> hidden <% } else if (user._id.equals(s.userCreated) == false ) { %> hidden <% } %>>Delete this entry</button>
+                <button class="button" type="submit" id="deletebtn" <% if (!user) { %> hidden <% } else if (user._id.equals(s.userCreated) == false ) { %> hidden <% } %>>Delete this entry</button>
               </form>
             </div>
           </div>

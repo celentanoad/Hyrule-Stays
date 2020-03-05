@@ -2,6 +2,11 @@
 
 <h1 class="title"><%= stay.name %></h1>
 <h2 class="title">Region: <%= stay.region %></h2>
+<% if (user) { %>
+<form method="POST" action="/users/<%= user._id %>">
+    <input class="favorites" type="submit" value="Add to Favorites" name="favorites"<% if (!user) { %> hidden <% } %>></input>
+</form>
+<% } %>
 <br><br>
 <h4>Reviews</h4>
 <p>Stayed here before? Share your experience with fellow travelers!</p>
@@ -23,11 +28,11 @@ action="/stays/<%= stay._id %>/reviews" <% if (!user) { %> hidden <% } %>>
     </label>
     </div>
   <br> <br>
-  <input type="submit" value="Add Review">
+  <input type="submit" value="Add Review" class="button">
 </form>
 
 <% if (stay.reviews.length) { %>
-    <table>
+    <table class="reviews">
       <thead>
         <tr>
             <th>Date</th>
@@ -45,7 +50,7 @@ action="/stays/<%= stay._id %>/reviews" <% if (!user) { %> hidden <% } %>>
             <td><%= r.content %></td>
             <td><%= r.rating %></td>
             <td><form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                    <button type="submit" id="deletebtn" <% if (!user) { %> hidden <% } else if (user._id.equals(r.userId) == false ) { %> hidden <% } %>>Delete this review</button>
+                    <button class="button" type="submit" id="deletebtn" <% if (!user) { %> hidden <% } else if (user._id.equals(r.userId) == false ) { %> hidden <% } %>>Delete this review</button>
                     <input name="stay_id" value= "<%=stay._id%>" hidden>
                 </form>
             </td>
