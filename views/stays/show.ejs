@@ -3,7 +3,7 @@
 <h1 class="title"><%= stay.name %></h1>
 <h2 class="title">Region: <%= stay.region %></h2>
 <% if (user) { %>
-<form method="POST" action="/users/<%= user._id %>">
+<form method="GET" action="/users/<%= user._id %>">
     <input class="favorites" type="submit" value="Add to Favorites" name="favorites"<% if (!user) { %> hidden <% } %>></input>
 </form>
 <% } %>

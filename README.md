@@ -1,7 +1,10 @@
 # Hyrule Stays
-#### Hyrule Stays is a campsite/stable review site based on the world of Hyrule from the Legend of Zelda video game series.  Hyrule Stays is designed for travelers to add, rate, and review various places they have stayed around Hyrule.
+Hyrule Stays is a campsite/stable review site based on the world of Hyrule from the Legend of Zelda video game series.  Hyrule Stays is designed for travelers to add, rate, and review various places they have stayed around Hyrule.
 
 ## Getting Started
+
+Start your journey here: 
+https://hyrule-stays.herokuapp.com
 
 ## Screenshots
 
@@ -31,6 +34,11 @@
 ##### Link had been asleep for 100 years, and when he woke up Hyrule was an unfamiliar, scary place.  Link wants to be able to pick the best places to stay while he makes his trek across Hyrule.
 
 ## Next Steps
+- Allow user to add or remove a place from their favorites list
+- Allow user to search for a place by region
+- Allow user to edit their reviews
+- Allow user to upload an image when adding a new place they've stayed
+- Have a selection of avatars a user to choose from to display next to their name
 
 ## Credits
 

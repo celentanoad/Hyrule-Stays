@@ -4,7 +4,6 @@ module.exports = {
     index,
     show,
     createAlias,
-    updateFavorites
 }
 
 function index(req, res, next) {
@@ -13,13 +12,6 @@ function index(req, res, next) {
 
 function show(req, res) {
     res.render("account", {user: req.user});
-}
-
-function updateFavorites(req, res) {
-    User.findById(req.user._id, function(err, user) {
-        console.log(req.body);
-        res.redirect(`account/${user._id}`);
-    });
 }
 
 function createAlias(req, res) {
