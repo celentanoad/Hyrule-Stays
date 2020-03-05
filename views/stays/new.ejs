@@ -3,11 +3,12 @@
 <h3>Add a place you've stayed!</h3>
 
 <form action="/stays" method="POST">
-    <label>Name: 
-        <input type="text" name="name">
+    <label class="form-label">Name: 
+        <input type="text" name="name" id="input-line">
     </label><br>
-    <label>Region: 
-        <select name="region">
+    <div class="rating">
+    <label class="form-label">Region: 
+        <select name="region" class="browser-default">
             <option value="Akkala">Akkala</option>
             <option value="Central Hyrule">Central Hyrule</option>
             <option value="Dueling Peaks">Dueling Peaks</option>
@@ -24,7 +25,8 @@
             <option value="Great Hyrule Forest">Great Hyrule Forest</option>
             <option value="Gerudo Wasteland">Gerudo Wasteland</option>
         </select>
-    </label><br><br>
+    </label>
+    </div><br><br>
     <input type="submit" value="Add">
 
 </form>

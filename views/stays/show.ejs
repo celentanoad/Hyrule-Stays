@@ -11,15 +11,17 @@ action="/stays/<%= stay._id %>/reviews" <% if (!user) { %> hidden <% } %>>
   <label class="form-label">Review: <br>
   <textarea name="content" id="textbox"></textarea>
   </label> <br>
-  <label class="form-label">Rating: <br>
-  <select name="rating" value="5">
-    <option value="5">5</option>
-    <option value="4">4</option>
-    <option value="3">3</option>
-    <option value="2">2</option>
-    <option value="1">1</option>
-  </select> 
-  </label>
+  <div class="rating">
+    <label class="form-label">Rating:
+    <select name="rating" class="browser-default">
+        <option value="5">5</option>
+        <option value="4">4</option>
+        <option value="3">3</option>
+        <option value="2">2</option>
+        <option value="1">1</option>
+    </select> 
+    </label>
+    </div>
   <br> <br>
   <input type="submit" value="Add Review">
 </form>

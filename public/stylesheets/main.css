@@ -88,6 +88,32 @@ td {
   height:100px;
 }
 
+.rating {
+  display: inline-flex;
+}
+
+.browser-default {
+  width: fit-content;
+  font-size: 16px;
+  font-family: HyliaSerifBeta-Regular;
+  background: beige;
+}
+
 .form-label {
   font-size: 20px;
 }
+
+#input-line {
+  width: 400px;
+  font-size: 20px;
+  color: beige;
+  font-family: "Old Standard TT";
+}
+
+#alias {
+  width: 400px;
+  font-size: 20px;
+  color: beige;
+  font-family: "Old Standard TT";
+}
+

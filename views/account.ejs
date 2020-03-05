@@ -1,8 +1,8 @@
 <%- include('./partials/header') %>
 
-<h1>Hello <%= user.alias %> !</h1>
+<h1 class="title">Hello <%= user.alias %> !</h1>
 
-<label> Change your alias here:
+<label class="form-label"> Change your alias here:
     <form action="account" method="POST">
         <input id="alias" type="text" name="alias">
         <button type="submit">Submit</button>
