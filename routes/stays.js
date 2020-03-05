@@ -8,7 +8,7 @@ router.post("/", isLoggedIn, staysCtrl.create);
 router.get("/:id", staysCtrl.show);
 router.delete("/:id", isLoggedIn, staysCtrl.delete);
 router.get("/:id/edit", isLoggedIn, staysCtrl.showUpdate);
-router.post("/update/:id", isLoggedIn, staysCtrl.update);
+router.put("/update/:id", isLoggedIn, staysCtrl.update);
 
 module.exports = router;
 

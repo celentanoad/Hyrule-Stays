@@ -34,7 +34,7 @@ function showUpdate(req, res) {
 
 function update(req,res) {
   Stay.findByIdAndUpdate(req.params.id, req.body, function(err, stays) {
-    res.redirect("/stays/");
+    res.redirect("/stays");
   })
 }
 
