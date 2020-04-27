@@ -10,5 +10,10 @@
 </label>
 
 <h2>Favorite Places (coming soon)!</h2>
+<% if (user.favorites)  { %>
+    <% user.favorites.forEach(favorite => { %>
+        <p><%=favorite.name%></p>
+  <%  }); %>
+<% } %>
 
 <%- include('./partials/footer') %>

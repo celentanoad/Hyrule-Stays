@@ -4,7 +4,7 @@
 <h2 class="title">Region: <%= stay.region %></h2>
 <h3 class=title>Average Rating: <%=stay.avgRating %></h3>
 <% if (user) { %>
-<form method="GET" action="/users/<%= user._id %>">
+<form method="POST" action="/users/<%= user._id %>/favorites">
     <input class="favorites" type="submit" value="Add to Favorites" name="favorites"<% if (!user) { %> hidden <% } %>></input>
 </form>
 <% } %>

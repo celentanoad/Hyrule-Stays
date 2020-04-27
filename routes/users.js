@@ -8,6 +8,8 @@ router.get('/', function(req, res, next) {
 
 router.get("/:id", isLoggedIn, usersCtrl.show);
 router.post("/:id", isLoggedIn, usersCtrl.createAlias);
+router.post("/:id/favorites", isLoggedIn, usersCtrl.addFavorite);
+
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();
