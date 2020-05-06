@@ -26,13 +26,29 @@ function createAlias(req, res) {
 }
 
 function addFavorite(req, res) {
-    stay = Stay.findById(req.body._id);
-    User.findById(req.user._id, function(err, user) {
-        user.favorites.push(req.body);
-        user.save(function(err) {
-            res.redirect(`/users/${req.user}`);
-        });
-        console.log(user.name)
-        console.log(user.favorites)
-    });
+    console.log(req.query.name)
+    res.redirect("/stays");
 }
+//     let stay = Stay.findById()
+
+//     Stay.findById(req.params._id, function(err, stay) {
+//         console.log(stay);
+//         User.findById(req.user._id, function(err, user) {
+//             // user.favorites.push(stay);
+//             user.save(function(err) {
+//                 res.redirect(`/users/${req.user}`);
+//             })
+//         })
+//     })
+// }
+//     stay = Stay.findById(req.params._id);
+//     console.log(stay)
+//     User.findById(req.user._id, function(err, user) {
+//         // user.favorites.push(stay);
+//         user.save(function(err) {
+//             res.redirect(`/users/${req.user}`);
+//         });
+//         console.log(user.name)
+//         console.log(user.favorites)
+//     });
+// }
